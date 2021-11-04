@@ -39,11 +39,11 @@ print(df.info())
 #convert objects to numerical values for data modeling
 #start with sex - only 2 possible values, can be handled with data replacement
 #assign M to 1 and F to 2
-df["ExerciseAngina"] = df["ExerciseAngina"].replace({"Y":"1"})
-df["ExerciseAngina"] = df["ExerciseAngina"].replace({"N":"0"})
+df["ExerciseAngina"] = df["ExerciseAngina"].replace({"Y":1})
+df["ExerciseAngina"] = df["ExerciseAngina"].replace({"N":0})
 df["ExerciseAngina"] = df["ExerciseAngina"].astype(int)
-df["Sex"] = df["Sex"].replace({"M":"0"})
-df["Sex"] = df["Sex"].replace({"F":"1"})
+df["Sex"] = df["Sex"].replace({"M":0})
+df["Sex"] = df["Sex"].replace({"F":1})
 df["Sex"] = df["Sex"].astype(int)
 
 #check whether replacement worked
