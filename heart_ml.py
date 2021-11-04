@@ -42,8 +42,8 @@ print(df.info())
 df["ExerciseAngina"] = df["ExerciseAngina"].replace({"Y":"1"})
 df["ExerciseAngina"] = df["ExerciseAngina"].replace({"N":"0"})
 df["ExerciseAngina"] = df["ExerciseAngina"].astype(int)
-df["Sex"] = df["Sex"].replace({"M":"1"})
-df["Sex"] = df["Sex"].replace({"F":"2"})
+df["Sex"] = df["Sex"].replace({"M":"0"})
+df["Sex"] = df["Sex"].replace({"F":"1"})
 df["Sex"] = df["Sex"].astype(int)
 
 #check whether replacement worked
