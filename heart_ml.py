@@ -105,10 +105,26 @@ print(cr_knn)
 print("Accuracy of K nearest neighbours is: ",acc_knn)
 print("\n\n--------------------------------------------------------------------------")
 
+from sklearn.linear_model import LogisticRegression
+model_logr = LogisticRegression()
+model_logr.fit(X_train,y_train)
+y_pred_logr = model_logr.predict(X_test)
+cnfn_logr = confusion_matrix(y_test,y_pred_logr)
+ac_logr = accuracy_score(y_test,y_pred_logr)
+cr_logr = classification_report(y_test,y_pred_logr)
+
+print("\n\n--------------------------------------------------------------------------")
+print("Logistic Regression")
+print(cnfn_logr)
+print(cr_logr)
+print("Accuracy of Logistic Regression is: ",ac_logr)
+print("\n\n--------------------------------------------------------------------------")
+
+
 
 from sklearn.linear_model import LinearRegression
-model_lr = LinearRegression() #create place for model
-model_lr.fit(X_train,y_train) #tell the model to train on training data
+model_lr = LinearRegression()
+model_lr.fit(X_train,y_train)
 y_pred_lr = model_lr.predict(X_test)
 #confusion matrix and classification report won't work here because the results are float not integer
 #use MAE and RMSE instead
